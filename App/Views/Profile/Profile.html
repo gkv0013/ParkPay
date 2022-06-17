@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+
+{% block css %}
+<link rel="stylesheet" href="/Static/CSS/profile.css" />
+{% endblock %}
+
+
+{% block main %}
+
+<div class="profile">
+    <div class="profile-screen">
+        <div class="app-title">
+            <h1>Profile</h1>
+            <img class="round" src="https://img.icons8.com/external-filled-outline-wichaiwi/64/undefined/external-account-e-commerce-website-filled-outline-wichaiwi.png"/>
+        </div>
+        <h2 style="text-align:center; color: rgb(247, 247, 247);">{{user.name}}</h2>
+        <h3 style="text-align:left; color: rgb(247, 247, 247);">Phone: {{user.phone}}</h3>
+        <h3 style="text-align:left; color: rgb(247, 247, 247);"> Email: {{user.gmail}}</h3>
+    </div>
+    
+</div>
+{% endblock %}

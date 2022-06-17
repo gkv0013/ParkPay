@@ -1,0 +1,63 @@
+{% extends "base.html" %}
+
+{% block css %}
+<link rel="stylesheet" href="/Static/CSS/Login.css" />
+{% endblock %}
+
+
+{% block main %}
+
+
+<div class="login">
+    <div class="login-screen">
+        <div class="app-title">
+            <h1>Sign-up</h1>
+        </div>
+        <div class="login-form">
+            <form method="post" action="/signup/create">
+
+                <div class="control-group">
+                    <label for="inputName"></label>
+                    <input id="inputName" name="name" placeholder="Name" autofocus required/>
+                </div>
+                <div class="control-group">
+                    <label for="inputPhone"></label>
+                    <input id="inputPhone" name="phone" placeholder="phone no" required />
+                </div>
+                <div class="control-group">
+                    <label for="inputEmail"></label>
+                    <input id="inputEmail" name="email" placeholder="email address" required type="email"/>
+                </div>
+                <div class="control-group">
+                    <label for="inputPassword"></label>
+                    <input type="password" id="inputPassword" name="password" placeholder="Password" required pattern="^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{6,}$" title="Minimum 6 chars, atleast one letter and number"/>
+                </div>
+                <div class="control-group">
+                    <label for="inputPasswordConfirmation"></label>
+                    <input type="password" id="inputPasswordConfirmation" name="password_confirmation" placeholder="Repeat password" required />
+                </div>
+
+                <button class="btn btn-primary btn-large btn-block" type="submit">Sign up</button>
+                <a class="login-link" href="/Login/login">Already have an account?</a>
+            </form>
+        </div>
+
+    </div>
+</div>
+
+<div align="center" color="white">
+    {% if user.errors is not empty %}
+    <ul style="color:red; list-style: none;">
+        {% for error in user.errors %}
+        <li>{{ error }}</li>
+        {% endfor %}
+    </ul>
+    {% endif %}
+
+</div>
+
+
+
+
+
+{% endblock %}

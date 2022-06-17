@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block css %}
+
+<link rel="stylesheet" href="/Static/CSS/Home.css" />{% endblock %}
+
+
+{% block main %}
+
+
+{% if is_logged_in %}
+<a href="/Login/destroy">Logout</a>.
+
+{% else %}
+<p> </p> 
+
+{% endif %}
+
+
+
+{% endblock %}
