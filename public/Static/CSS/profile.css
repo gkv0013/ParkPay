@@ -1,5 +1,6 @@
 body {
     background-color: rgb(58, 58, 58);
+    opacity: 0.80;
 }
 .profile {
     margin: 20px auto;

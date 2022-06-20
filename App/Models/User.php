@@ -26,6 +26,7 @@ class User extends \Core\Model
             $this->$key = $value;
         };
     }
+
     public static function getAll()
     {
         $db = static::getDB();
@@ -73,6 +74,7 @@ class User extends \Core\Model
         if (strlen($this->phone) > 10 || strlen($this->phone) < 10) {
             $this->errors[] = 'Please enter 10 digit phone number';
         }
+        
         if (preg_match('/.*[a-z]+.*/i', $this->password) == 0) {
             $this->errors[] = 'Atleast one letter for password';
         }

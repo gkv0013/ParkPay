@@ -23,10 +23,13 @@ class Signup extends \Core\Controller
         View::renderTemplate('Signup/Signup.html');
     }
 
+
     public function createAction()
     {
         //var_dump($_POST);
+
         $user = new User($_POST);
+        
         if ($user->save()) {
             $this->redirect('/Signup/success');
 
@@ -41,6 +44,8 @@ class Signup extends \Core\Controller
             //var_dump($user->errors);
         }
     }
+
+
     public function successAction()
     {
         View::renderTemplate('Signup/Success.html');

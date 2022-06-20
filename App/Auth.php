@@ -8,7 +8,7 @@ class Auth
     public static function login($user)
     {
         session_regenerate_id(true);
-        $_SESSION['mem_id']=$user->mem_id;
+        $_SESSION['mem_id']=$user->mem_id;  
     }
     public static function logout()
     {
@@ -32,11 +32,13 @@ class Auth
         // Finally destroy the session
         session_destroy();
     }
+
     public static function isLoggedIn()
     {
         return isset($_SESSION['mem_id']);
 
     }
+
     public static function getUser()
     {
         if(isset($_SESSION['mem_id'])){
