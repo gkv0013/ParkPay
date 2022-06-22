@@ -1,5 +1,5 @@
 # ParkPay
-Create a database
+Create a database: login_db
  
 CREATE TABLE `member` (
   `mem_id` int(11) NOT NULL PRIMARY KEY AUTO_INCREMENT,
